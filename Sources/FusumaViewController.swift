@@ -77,12 +77,13 @@ public var fusumaSavesImage: Bool = false
 public var fusumaCameraRollTitle = "CAMERA ROLL"
 public var fusumaCameraTitle     = "PHOTO"
 public var fusumaVideoTitle      = "VIDEO"
-public var fusumaTitleFont       = UIFont(name: "AvenirNext-DemiBold", size: 15)
+public var fusumaTitleFont       = UIFont.preferredFont(forTextStyle: .headline)
+
+public var fusumaMenuBorderColor = UIColor.black
 
 public var fusumaTintIcons: Bool = true
 
 @objc public enum FusumaMode: Int {
-    
     case camera
     case library
     case video
@@ -155,7 +156,7 @@ public class FusumaViewController: UIViewController {
         videoView.delegate  = self
 
         menuView.backgroundColor = fusumaBackgroundColor
-        menuView.addBottomBorder(UIColor.black, width: 1.0)
+        menuView.addBottomBorder(fusumaMenuBorderColor, width: 1.0)
 
         albumView.allowMultipleSelection = allowMultipleSelection
         
